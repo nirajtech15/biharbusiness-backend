@@ -1,0 +1,82 @@
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BusinessController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\ClaimController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobController;
+use App\Http\Controllers\LeadController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ReviewController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\BusinessController as AdminBusinessController;
+use App\Http\Controllers\Admin\ClaimController as AdminClaimController;
+use App\Http\Controllers\Admin\JobController as AdminJobController;
+use App\Http\Controllers\Admin\LeadController as AdminLeadController;
+use App\Http\Controllers\Admin\ReviewController as AdminReviewController;
+use App\Http\Controllers\Admin\BlogController as AdminBlogController;
+use App\Http\Controllers\Admin\UserController as AdminUserController;
+use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Owner\DashboardController as OwnerDashboardController;
+use App\Http\Controllers\Owner\BusinessController as OwnerBusinessController;
+use App\Http\Controllers\Owner\JobController as OwnerJobController;
+use App\Http\Controllers\Owner\ReviewController as OwnerReviewController;
+use App\Http\Controllers\Owner\ApplicationController as OwnerApplicationController;
+use App\Http\Controllers\SitemapController;
+use App\Http\Controllers\RazorpayWebhookController;
+use App\Http\Controllers\Owner\LeadController as OwnerLeadController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\Admin\ContactMessageController as AdminContactMessageController;
+use Illuminate\Support\Facades\URL;
+use App\Http\Controllers\EnquiryController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use App\Models\Business;
+use App\Models\BusinessEnquiry;
+use App\Models\Review;
+use Razorpay\Api\Api;
+use App\Models\User;
+use App\Http\Controllers\Api\AppAuthController;
+//$api = new \Razorpay\Api\Api(config('razorpay.key'), config('razorpay.secret'));
+
+// 🌍 PUBLIC
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/businesses', [BusinessController::class, 'index'])->name('businesses.index');
+Route::get('/business/{slug}', [BusinessController::class, 'show'])->name('business.show');
+Route::get('/jobs', [JobController::class, 'index'])->name('jobs.index');
+Route::get('/job/{slug}', [JobController::class, 'show'])->name('job.show');
+Route::post('/job/{job}/apply', [JobController::class, 'apply'])->name('job.apply');
+Route::get('/leads', [LeadController::class, 'index'])->name('leads.index');
+Route::post('/leads/store', [LeadController::class, 'store'])->name('leads.store');
+Route::get('/blogs', [BlogController::class, 'index'])->name('blogs.index');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+Route::post('/review/store', [ReviewController::class, 'store'])->name('review.store');
+Route::get('/claim-business/{id}', [ClaimController::class, 'create'])->name('claim.create');
+Route::post('/claim-business', [ClaimController::class, 'store'])->name('claim.store');
+Route::get('/city/{city}', [BusinessController::class, 'city'])->name('businesses.city');
+Route::get('/city/{city}/{category}', [BusinessController::class, 'cityCategory'])->name('businesses.city.category');
+Route::get('/sitemap.xml', [SitemapController::class, 'index'])->name('sitemap');
+Route::get('/ajax/business-search', [BusinessController::class, 'ajaxSearch'])->name('businesses.ajax.search');
+Route::get('/about', function () { return view('pages.about');})->name('about');
+Route::get('/privacy-policy', function () {return view('pages.privacy');})->name('privacy');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/pricing', function () {$plans = all_plans();return view('pages.pricing', compact('plans'));})->name('pricing');
+Route::get('/faq', function () {return view('pages.faq');})->name('faq');
+Route::get('/terms-and-conditions', function () {return view('pages.terms');})->name('terms');
+Route::get('/set-locale/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'hi', 'mai'])) {
+        session(['locale' => $locale]);
+    }
+
+
+Route::post('/api/register', [AuthController::class, 'appRegister']);
+Route::post('/api/login', [AuthController::class, 'appLogin']);
+Route::post('/api/business/basic-save', [BusinessController::class, 'appBasicSave']);
+Route::post('/api/business/contact-update', [BusinessController::class, 'appContactUpdate']);
+Route::get('/api/business/my/{userId}', [BusinessController::class, 'appMyBusiness']);
+Route::post('/api/business/description-update', [BusinessController::class, 'appUpdateBusinessDescription']);
+Route::post('/api/business/media-update', [BusinessController::class, 'appMediaUpdate']);
+Route::post('/api/business/final-update', [BusinessController::class, 'appFinalUpdate']);
