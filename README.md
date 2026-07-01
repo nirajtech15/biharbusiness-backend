@@ -112,7 +112,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Business Details</b>
+<b>Listing</b>
 
 </td>
 
@@ -136,7 +136,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Jobs</b>
+<b>Details Page</b>
 
 </td>
 
@@ -146,7 +146,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Business Dashboard</b>
+<b>Jobs Listing</b>
 
 </td>
 
