@@ -1,8 +1,4 @@
-<p align="center">
 
-<img src="./assets/main_banner.png" width="100%" alt="BiharBusiness Banner"/>
-
-</p>
 
 <h1 align="center">
 🏢 BiharBusiness
@@ -92,7 +88,7 @@ The ecosystem consists of:
 
 <td align="center">
 
-<img src="./screenshots/01-home.png" width="300"/>
+<img src="./screenshots/b1.png" width="300"/>
 
 <br>
 
@@ -102,7 +98,7 @@ The ecosystem consists of:
 
 <td align="center">
 
-<img src="./screenshots/02-category.png" width="300"/>
+<img src="./screenshots/b2.png" width="300"/>
 
 <br>
 
@@ -112,7 +108,7 @@ The ecosystem consists of:
 
 <td align="center">
 
-<img src="./screenshots/03-business.png" width="300"/>
+<img src="./screenshots/b3.png" width="300"/>
 
 <br>
 
@@ -126,7 +122,7 @@ The ecosystem consists of:
 
 <td align="center">
 
-<img src="./screenshots/04-search.png" width="300"/>
+<img src="./screenshots/b4.png" width="300"/>
 
 <br>
 
@@ -136,7 +132,7 @@ The ecosystem consists of:
 
 <td align="center">
 
-<img src="./screenshots/05-pricing.png" width="300"/>
+<img src="./screenshots/b5.png" width="300"/>
 
 <br>
 
@@ -146,7 +142,7 @@ The ecosystem consists of:
 
 <td align="center">
 
-<img src="./screenshots/06-dashboard.png" width="300"/>
+<img src="./screenshots/b6.png" width="300"/>
 
 <br>
 
@@ -155,7 +151,39 @@ The ecosystem consists of:
 </td>
 
 </tr>
+<tr>
 
+<td align="center">
+
+<img src="./screenshots/b7.png" width="300"/>
+
+<br>
+
+<b>Homepage</b>
+
+</td>
+
+<td align="center">
+
+<img src="./screenshots/b8.png" width="300"/>
+
+<br>
+
+<b>Categories</b>
+
+</td>
+
+<td align="center">
+
+<img src="./screenshots/b9.png" width="300"/>
+
+<br>
+
+<b>Business Details</b>
+
+</td>
+
+</tr>
 </table>
 
 ---
