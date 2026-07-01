@@ -126,7 +126,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Search</b>
+<b>Details</b>
 
 </td>
 
@@ -136,7 +136,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Pricing</b>
+<b>Jobs</b>
 
 </td>
 
@@ -159,7 +159,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Homepage</b>
+<b>Dasboard</b>
 
 </td>
 
@@ -169,7 +169,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Categories</b>
+<b>Leads</b>
 
 </td>
 
@@ -179,7 +179,7 @@ The ecosystem consists of:
 
 <br>
 
-<b>Business Details</b>
+<b>Login</b>
 
 </td>
 
